@@ -18,6 +18,7 @@ from __future__ import absolute_import
 __version__ = "1.0.0"
 
 # import apis into sdk package
+from mainnet.api.contract_api import ContractApi
 from mainnet.api.mine_api import MineApi
 from mainnet.api.wallet_api import WalletApi
 
@@ -33,7 +34,12 @@ from mainnet.exceptions import ApiException
 # import models into sdk package
 from mainnet.models.balance_request import BalanceRequest
 from mainnet.models.balance_response import BalanceResponse
+from mainnet.models.contract import Contract
+from mainnet.models.contract_fn_request import ContractFnRequest
+from mainnet.models.contract_fn_response import ContractFnResponse
+from mainnet.models.contract_response import ContractResponse
 from mainnet.models.deposit_address_response import DepositAddressResponse
+from mainnet.models.escrow_request import EscrowRequest
 from mainnet.models.max_amount_to_send_request import MaxAmountToSendRequest
 from mainnet.models.mine_request import MineRequest
 from mainnet.models.scalable_vector_graphic import ScalableVectorGraphic

@@ -69,15 +69,15 @@ configuration = mainnet.Configuration(
 # Enter a context with an instance of the API client
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mainnet.MineApi(api_client)
-    mine_request = mainnet.MineRequest() # MineRequest |  (optional)
+    api_instance = mainnet.ContractApi(api_client)
+    escrow_request = mainnet.EscrowRequest() # EscrowRequest | Request a new escrow contract
 
     try:
-        # Mine regtest coins to a specified address
-        api_response = api_instance.mine(mine_request=mine_request)
+        # Create an escrow contract
+        api_response = api_instance.create_escrow(escrow_request)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling MineApi->mine: %s\n" % e)
+        print("Exception when calling ContractApi->create_escrow: %s\n" % e)
     
 ```
 
@@ -87,6 +87,9 @@ All URIs are relative to *https://rest-unstable.mainnet.cash*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ContractApi* | [**create_escrow**](docs/ContractApi.md#create_escrow) | **POST** /contract/escrow/create | Create an escrow contract
+*ContractApi* | [**escrow_fn**](docs/ContractApi.md#escrow_fn) | **POST** /contract/escrow/call | Finalize an escrow contract
+*ContractApi* | [**escrow_utxos**](docs/ContractApi.md#escrow_utxos) | **POST** /contract/escrow/utxos | List specific utxos in a contract
 *MineApi* | [**mine**](docs/MineApi.md#mine) | **POST** /mine | Mine regtest coins to a specified address
 *WalletApi* | [**balance**](docs/WalletApi.md#balance) | **POST** /wallet/balance | Get total balance for wallet
 *WalletApi* | [**create_wallet**](docs/WalletApi.md#create_wallet) | **POST** /wallet/create | create a new wallet
@@ -102,7 +105,12 @@ Class | Method | HTTP request | Description
 
  - [BalanceRequest](docs/BalanceRequest.md)
  - [BalanceResponse](docs/BalanceResponse.md)
+ - [Contract](docs/Contract.md)
+ - [ContractFnRequest](docs/ContractFnRequest.md)
+ - [ContractFnResponse](docs/ContractFnResponse.md)
+ - [ContractResponse](docs/ContractResponse.md)
  - [DepositAddressResponse](docs/DepositAddressResponse.md)
+ - [EscrowRequest](docs/EscrowRequest.md)
  - [MaxAmountToSendRequest](docs/MaxAmountToSendRequest.md)
  - [MineRequest](docs/MineRequest.md)
  - [ScalableVectorGraphic](docs/ScalableVectorGraphic.md)

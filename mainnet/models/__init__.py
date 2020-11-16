@@ -17,7 +17,12 @@ from __future__ import absolute_import
 # import models into model package
 from mainnet.models.balance_request import BalanceRequest
 from mainnet.models.balance_response import BalanceResponse
+from mainnet.models.contract import Contract
+from mainnet.models.contract_fn_request import ContractFnRequest
+from mainnet.models.contract_fn_response import ContractFnResponse
+from mainnet.models.contract_response import ContractResponse
 from mainnet.models.deposit_address_response import DepositAddressResponse
+from mainnet.models.escrow_request import EscrowRequest
 from mainnet.models.max_amount_to_send_request import MaxAmountToSendRequest
 from mainnet.models.mine_request import MineRequest
 from mainnet.models.scalable_vector_graphic import ScalableVectorGraphic
