@@ -1,0 +1,10 @@
+# UnitType
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**unit** | **str** | Unit of account. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

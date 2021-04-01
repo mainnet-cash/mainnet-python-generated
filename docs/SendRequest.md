@@ -3,8 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wallet_id** | **str** | ID that is returned in &#x60;wallet&#x60; field of /wallet call  | [optional] 
-**to** | [**list[SendRequestItem]**](SendRequestItem.md) |  | [optional] 
+**wallet_id** | **str** | The walletId of the source of funds to spend from.  | [optional] 
+**to** | [**AnyOfSendRequestItemarray**](AnyOfSendRequestItemarray.md) |  | [optional] 
+**options** | [**SendRequestOptions**](SendRequestOptions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

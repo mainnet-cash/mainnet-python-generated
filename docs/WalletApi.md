@@ -8,9 +8,12 @@ Method | HTTP request | Description
 [**create_wallet**](WalletApi.md#create_wallet) | **POST** /wallet/create | create a new wallet
 [**deposit_address**](WalletApi.md#deposit_address) | **POST** /wallet/deposit_address | Get a deposit address in cash address format
 [**deposit_qr**](WalletApi.md#deposit_qr) | **POST** /wallet/deposit_qr | Get receiving cash address as a qrcode
+[**info**](WalletApi.md#info) | **POST** /wallet/info | Get information about a wallet
 [**max_amount_to_send**](WalletApi.md#max_amount_to_send) | **POST** /wallet/max_amount_to_send | Get maximum spendable amount
 [**send**](WalletApi.md#send) | **POST** /wallet/send | Send some amount to a given address
 [**send_max**](WalletApi.md#send_max) | **POST** /wallet/send_max | Send all available funds to a given address
+[**signed_message_sign**](WalletApi.md#signed_message_sign) | **POST** /wallet/signed/sign | Returns the message signature
+[**signed_message_verify**](WalletApi.md#signed_message_verify) | **POST** /wallet/signed/verify | Returns a boolean indicating whether message was valid for a given address
 [**utxos**](WalletApi.md#utxos) | **POST** /wallet/utxo | Get detailed information about unspent outputs (utxos)
 
 
@@ -98,7 +101,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    wallet_request = mainnet.WalletRequest() # WalletRequest | Request a new new random wallet
+    wallet_request = mainnet.WalletRequest() # WalletRequest | Request a new random wallet
 
     try:
         # create a new wallet
@@ -112,7 +115,7 @@ with mainnet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wallet_request** | [**WalletRequest**](WalletRequest.md)| Request a new new random wallet | 
+ **wallet_request** | [**WalletRequest**](WalletRequest.md)| Request a new random wallet | 
 
 ### Return type
 
@@ -251,7 +254,67 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A Qr code image data encoded string in the src field suitable for inclusion in html using:    - \\&lt;img src\\&#x3D;\\\&quot;{response.src}\&quot;\\&gt;                  |  -  |
+**200** | A Qr code image data encoded string in the src field suitable for inclusion in html using:    - \\&lt;img src\\&#x3D;\\\&quot;{response.src}\&quot;\\&gt;  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **info**
+> WalletInfo info(serialized_wallet)
+
+Get information about a wallet
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | The wallet to request information about, in serialized form. 
+
+    try:
+        # Get information about a wallet
+        api_response = api_instance.info(serialized_wallet)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->info: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serialized_wallet** | [**SerializedWallet**](SerializedWallet.md)| The wallet to request information about, in serialized form.  | 
+
+### Return type
+
+[**WalletInfo**](WalletInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Information about the wallet network, type, and keys  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -403,7 +466,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    send_max_request = mainnet.SendMaxRequest() # SendMaxRequest | Request to all available funds to a given address
+    send_max_request = mainnet.SendMaxRequest() # SendMaxRequest | Request to send all available funds to a given address
 
     try:
         # Send all available funds to a given address
@@ -417,7 +480,7 @@ with mainnet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **send_max_request** | [**SendMaxRequest**](SendMaxRequest.md)| Request to all available funds to a given address | 
+ **send_max_request** | [**SendMaxRequest**](SendMaxRequest.md)| Request to send all available funds to a given address | 
 
 ### Return type
 
@@ -437,6 +500,126 @@ No authorization required
 |-------------|-------------|------------------|
 **202** | transaction accepted |  -  |
 **400** | Invalid Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **signed_message_sign**
+> SignedMessageResponse signed_message_sign(create_signed_message_request=create_signed_message_request)
+
+Returns the message signature
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    create_signed_message_request = mainnet.CreateSignedMessageRequest() # CreateSignedMessageRequest | Sign a message  (optional)
+
+    try:
+        # Returns the message signature
+        api_response = api_instance.signed_message_sign(create_signed_message_request=create_signed_message_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->signed_message_sign: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_signed_message_request** | [**CreateSignedMessageRequest**](CreateSignedMessageRequest.md)| Sign a message  | [optional] 
+
+### Return type
+
+[**SignedMessageResponse**](SignedMessageResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **signed_message_verify**
+> VerifySignedMessageResponse signed_message_verify(verify_signed_message_request=verify_signed_message_request)
+
+Returns a boolean indicating whether message was valid for a given address
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    verify_signed_message_request = mainnet.VerifySignedMessageRequest() # VerifySignedMessageRequest | Sign a message  (optional)
+
+    try:
+        # Returns a boolean indicating whether message was valid for a given address
+        api_response = api_instance.signed_message_verify(verify_signed_message_request=verify_signed_message_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->signed_message_verify: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verify_signed_message_request** | [**VerifySignedMessageRequest**](VerifySignedMessageRequest.md)| Sign a message  | [optional] 
+
+### Return type
+
+[**VerifySignedMessageResponse**](VerifySignedMessageResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
