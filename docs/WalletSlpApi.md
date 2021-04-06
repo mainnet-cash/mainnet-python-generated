@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**nft_parent_genesis**](WalletSlpApi.md#nft_parent_genesis) | **POST** /wallet/slp/nft_parent_genesis | Get created tokenId back and new NFT token balance of the wallet
 [**slp_all_balances**](WalletSlpApi.md#slp_all_balances) | **POST** /wallet/slp/all_balances | Get all slp balances of the wallet
 [**slp_balance**](WalletSlpApi.md#slp_balance) | **POST** /wallet/slp/balance | Get total slp token balance of the wallet
+[**slp_create_wallet**](WalletSlpApi.md#slp_create_wallet) | **POST** /wallet/slp/create | create a new SLP wallet
 [**slp_deposit_address**](WalletSlpApi.md#slp_deposit_address) | **POST** /wallet/slp/deposit_address | Get an SLP deposit address in cash address format
 [**slp_deposit_qr**](WalletSlpApi.md#slp_deposit_qr) | **POST** /wallet/slp/deposit_qr | Get an SLP receiving cash address as a qrcode
 [**slp_genesis**](WalletSlpApi.md#slp_genesis) | **POST** /wallet/slp/genesis | Get created tokenId back and new slp token balance of the wallet
@@ -256,6 +257,67 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **slp_create_wallet**
+> WalletResponse slp_create_wallet(wallet_request)
+
+create a new SLP wallet
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletSlpApi(api_client)
+    wallet_request = mainnet.WalletRequest() # WalletRequest | Request a new SLP wallet
+
+    try:
+        # create a new SLP wallet
+        api_response = api_instance.slp_create_wallet(wallet_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletSlpApi->slp_create_wallet: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wallet_request** | [**WalletRequest**](WalletRequest.md)| Request a new SLP wallet | 
+
+### Return type
+
+[**WalletResponse**](WalletResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+**405** | Invalid input |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
