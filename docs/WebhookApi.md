@@ -31,7 +31,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WebhookApi(api_client)
-    watch_address_request = mainnet.WatchAddressRequest() # WatchAddressRequest | Based on the 'type' parameter the webhook will be triggered to either post balance or raw transactions to the 'url' - 'transaction:in' for incoming only, 'transaction:out' for outgoing only and 'transaction:in,out' both for incoming and outgoing transactions. 'balance' will post the object according to 'BalanceResponse' schema 
+    watch_address_request = mainnet.WatchAddressRequest() # WatchAddressRequest | Based on the 'type' parameter the webhook will be triggered to either post balance or raw transactions to the 'url': - 'transaction:in' for incoming BCH transactions - 'transaction:out' for outgoing BCH transactions - 'transaction:in,out' both for incoming and outgoing BCH transactions - 'balance' will post the object according to 'BalanceResponse' schema - 'slptransaction:in' for incoming SLP transactions - 'slptransaction:out' for outgoing SLP transactions - 'slptransaction:in,out' both for incoming and outgoing SLP transactions - 'slpbalance' will post the object according to 'SlpBalanceResponse' schema  'tokenId' parameter is mandatory when using SLP webhooks. 
 
     try:
         # Create a webhook to watch cashaddress balance and transactions. 
@@ -45,7 +45,7 @@ with mainnet.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **watch_address_request** | [**WatchAddressRequest**](WatchAddressRequest.md)| Based on the &#39;type&#39; parameter the webhook will be triggered to either post balance or raw transactions to the &#39;url&#39; - &#39;transaction:in&#39; for incoming only, &#39;transaction:out&#39; for outgoing only and &#39;transaction:in,out&#39; both for incoming and outgoing transactions. &#39;balance&#39; will post the object according to &#39;BalanceResponse&#39; schema  | 
+ **watch_address_request** | [**WatchAddressRequest**](WatchAddressRequest.md)| Based on the &#39;type&#39; parameter the webhook will be triggered to either post balance or raw transactions to the &#39;url&#39;: - &#39;transaction:in&#39; for incoming BCH transactions - &#39;transaction:out&#39; for outgoing BCH transactions - &#39;transaction:in,out&#39; both for incoming and outgoing BCH transactions - &#39;balance&#39; will post the object according to &#39;BalanceResponse&#39; schema - &#39;slptransaction:in&#39; for incoming SLP transactions - &#39;slptransaction:out&#39; for outgoing SLP transactions - &#39;slptransaction:in,out&#39; both for incoming and outgoing SLP transactions - &#39;slpbalance&#39; will post the object according to &#39;SlpBalanceResponse&#39; schema  &#39;tokenId&#39; parameter is mandatory when using SLP webhooks.  | 
 
 ### Return type
 
