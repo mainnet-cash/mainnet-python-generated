@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**deposit_qr**](WalletApi.md#deposit_qr) | **POST** /wallet/deposit_qr | Get receiving cash address as a qrcode
 [**info**](WalletApi.md#info) | **POST** /wallet/info | Get information about a wallet
 [**max_amount_to_send**](WalletApi.md#max_amount_to_send) | **POST** /wallet/max_amount_to_send | Get maximum spendable amount
+[**named_exists**](WalletApi.md#named_exists) | **POST** /wallet/named_exists | Check if a named wallet already exists
+[**replace_named**](WalletApi.md#replace_named) | **POST** /wallet/replace_named | Replace (recover) named wallet with a new walletId. If wallet with a provided name does not exist yet, it will be creted with a &#x60;walletId&#x60; supplied If wallet exists it will be overwritten without exception 
 [**send**](WalletApi.md#send) | **POST** /wallet/send | Send some amount to a given address
 [**send_max**](WalletApi.md#send_max) | **POST** /wallet/send_max | Send all available funds to a given address
 [**signed_message_sign**](WalletApi.md#signed_message_sign) | **POST** /wallet/signed/sign | Returns the message signature
@@ -377,6 +379,128 @@ No authorization required
 **200** | transaction accepted |  -  |
 **400** | Invalid Request |  -  |
 **418** | Invalid network for given address |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **named_exists**
+> bool named_exists(wallet_named_exists_request)
+
+Check if a named wallet already exists
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    wallet_named_exists_request = mainnet.WalletNamedExistsRequest() # WalletNamedExistsRequest | Request parameters
+
+    try:
+        # Check if a named wallet already exists
+        api_response = api_instance.named_exists(wallet_named_exists_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->named_exists: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wallet_named_exists_request** | [**WalletNamedExistsRequest**](WalletNamedExistsRequest.md)| Request parameters | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+**405** | Invalid input |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **replace_named**
+> bool replace_named(wallet_replace_named_request)
+
+Replace (recover) named wallet with a new walletId. If wallet with a provided name does not exist yet, it will be creted with a `walletId` supplied If wallet exists it will be overwritten without exception 
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    wallet_replace_named_request = mainnet.WalletReplaceNamedRequest() # WalletReplaceNamedRequest | Request parameters
+
+    try:
+        # Replace (recover) named wallet with a new walletId. If wallet with a provided name does not exist yet, it will be creted with a `walletId` supplied If wallet exists it will be overwritten without exception 
+        api_response = api_instance.replace_named(wallet_replace_named_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->replace_named: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wallet_replace_named_request** | [**WalletReplaceNamedRequest**](WalletReplaceNamedRequest.md)| Request parameters | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+**405** | Invalid input |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

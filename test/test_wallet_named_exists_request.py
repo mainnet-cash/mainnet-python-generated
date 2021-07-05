@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import mainnet
-from mainnet.models.send_response import SendResponse  # noqa: E501
+from mainnet.models.wallet_named_exists_request import WalletNamedExistsRequest  # noqa: E501
 from mainnet.rest import ApiException
 
-class TestSendResponse(unittest.TestCase):
-    """SendResponse unit test stubs"""
+class TestWalletNamedExistsRequest(unittest.TestCase):
+    """WalletNamedExistsRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,25 +30,22 @@ class TestSendResponse(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test SendResponse
+        """Test WalletNamedExistsRequest
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mainnet.models.send_response.SendResponse()  # noqa: E501
+        # model = mainnet.models.wallet_named_exists_request.WalletNamedExistsRequest()  # noqa: E501
         if include_optional :
-            return SendResponse(
-                tx_id = '1e6442a0d3548bb4f917721184ac1cb163ddf324e2c09f55c46ff0ba521cb89f', 
-                balance = mainnet.models.balance_response.BalanceResponse(
-                    bch = 1, 
-                    sat = 100000000, 
-                    usd = 438.02, )
+            return WalletNamedExistsRequest(
+                name = 'walletName', 
+                type = 'seed'
             )
         else :
-            return SendResponse(
+            return WalletNamedExistsRequest(
         )
 
-    def testSendResponse(self):
-        """Test SendResponse"""
+    def testWalletNamedExistsRequest(self):
+        """Test WalletNamedExistsRequest"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

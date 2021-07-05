@@ -67,6 +67,8 @@ docs/VerifySignedMessageResponseDetails.md
 docs/WalletApi.md
 docs/WalletInfo.md
 docs/WalletMnemonic.md
+docs/WalletNamedExistsRequest.md
+docs/WalletReplaceNamedRequest.md
 docs/WalletRequest.md
 docs/WalletResponse.md
 docs/WalletSlpApi.md
@@ -149,6 +151,8 @@ mainnet/models/verify_signed_message_response.py
 mainnet/models/verify_signed_message_response_details.py
 mainnet/models/wallet_info.py
 mainnet/models/wallet_mnemonic.py
+mainnet/models/wallet_named_exists_request.py
+mainnet/models/wallet_replace_named_request.py
 mainnet/models/wallet_request.py
 mainnet/models/wallet_response.py
 mainnet/models/wallet_type.py
@@ -226,6 +230,8 @@ test/test_verify_signed_message_response_details.py
 test/test_wallet_api.py
 test/test_wallet_info.py
 test/test_wallet_mnemonic.py
+test/test_wallet_named_exists_request.py
+test/test_wallet_replace_named_request.py
 test/test_wallet_request.py
 test/test_wallet_response.py
 test/test_wallet_slp_api.py
