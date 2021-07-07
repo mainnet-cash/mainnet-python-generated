@@ -15,6 +15,7 @@ Create an escrow contract
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -27,9 +28,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.ContractEscrowApi(api_client)
     escrow_request = mainnet.EscrowRequest() # EscrowRequest | Request a new escrow contract from a template
@@ -54,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -76,6 +86,7 @@ Finalize an escrow contract
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -88,9 +99,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.ContractEscrowApi(api_client)
     escrow_fn_request = mainnet.EscrowFnRequest() # EscrowFnRequest | 
@@ -115,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

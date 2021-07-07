@@ -16,6 +16,7 @@ Call a method on a contract
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -28,9 +29,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.ContractApi(api_client)
     contract_fn_request = {"contractId":"testnet:TURNME1UQmxaakEwT0dJelpHRXpOVEUzT1RObU5tVmtNVFJqWXpKbVpHVTBOakJpWldOak5XSTJOVGhrT1RFek9EUTBNMkk1WVRNd01EQTNNRGRoTm1FMzpNRE0wT1RjNFlXTTBOalJtTXpVNFlqSXpOV1l4TVRJeE1tVmlObVV3TVRkaFpqa3dNakUxWWprd1lqRm1aamMwTnpGa09XRmxNbUZpWWpWbE1Ea3lOak5pOk1qRTE=:Y29udHJhY3QgVHJhbnNmZXJXaXRoVGltZW91dChwdWJrZXkgc2VuZGVyLCBwdWJrZXkgcmVjaXBpZW50LCBpbnQgdGltZW91dCkgewogICAgZnVuY3Rpb24gdHJhbnNmZXIoc2lnIHJlY2lwaWVudFNpZykgewogICAgICAgIHJlcXVpcmUoY2hlY2tTaWcocmVjaXBpZW50U2lnLCByZWNpcGllbnQpKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0aW1lb3V0KHNpZyBzZW5kZXJTaWcpIHsKICAgICAgICByZXF1aXJlKGNoZWNrU2lnKHNlbmRlclNpZywgc2VuZGVyKSk7CiAgICAgICAgcmVxdWlyZSh0eC50aW1lID49IHRpbWVvdXQpOwogICAgfQp9Cg==:1996128042","action":"send","function":"timeout","to":{"unit":"sat","cashaddr":"bchtest:qpalhxhl05mlhms3ys43u76rn0ttdv3qg2usm4nm7t","value":2000},"feePerByte":1} # ContractFnRequest | Request a new cashscript contract
@@ -55,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -79,6 +89,7 @@ Returns all UTXOs that can be spent by the contract. Both confirmed and unconfir
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -91,9 +102,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.ContractApi(api_client)
     contract = mainnet.Contract() # Contract | 
@@ -118,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -140,6 +160,7 @@ Create a cashscript contract
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -152,9 +173,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.ContractApi(api_client)
     contract_request = mainnet.ContractRequest() # ContractRequest | Request a new cashscript contract
@@ -179,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

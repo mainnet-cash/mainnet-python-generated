@@ -27,6 +27,7 @@ Get created tokenId back and new NFT child token balance of the wallet
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -39,9 +40,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_genesis_request = mainnet.SlpGenesisRequest() # SlpGenesisRequest | Request to create a new NFT child token (genesis) by consuming a parent token 
@@ -66,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -87,6 +97,7 @@ Get created tokenId back and new NFT token balance of the wallet
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -99,9 +110,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_genesis_request = mainnet.SlpGenesisRequest() # SlpGenesisRequest | Request to create a new NFT parent token (genesis) 
@@ -126,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -147,6 +167,7 @@ Get all slp balances of the wallet
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -159,9 +180,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | Request for a wallet slp balances 
@@ -186,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -207,6 +237,7 @@ Get total slp token balance of the wallet
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -219,9 +250,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_balance_request = mainnet.SlpBalanceRequest() # SlpBalanceRequest | Request for a wallet slp token balance 
@@ -246,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -267,6 +307,7 @@ create a new SLP wallet
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -279,9 +320,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     wallet_request = mainnet.WalletRequest() # WalletRequest | Request a new SLP wallet
@@ -306,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -328,6 +378,7 @@ Get an SLP deposit address in cash address format
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -340,9 +391,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | Request for an SLP deposit address given a wallet 
@@ -367,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -388,6 +448,7 @@ Get an SLP receiving cash address as a qrcode
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -400,9 +461,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | Request for an SLP deposit cash address as a Quick Response code (qrcode) 
@@ -427,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -448,6 +518,7 @@ Get created tokenId back and new slp token balance of the wallet
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -460,9 +531,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_genesis_request = mainnet.SlpGenesisRequest() # SlpGenesisRequest | Request to create a new SLP token (genesis) 
@@ -487,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -508,6 +588,7 @@ Get created tokenId back and new slp token balance of the wallet
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -520,9 +601,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_mint_request = mainnet.SlpMintRequest() # SlpMintRequest | Request to mint more of SLP tokens 
@@ -547,7 +637,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -568,6 +658,7 @@ Get list of unspent SLP outpoints.
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -580,9 +671,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | Request of unspent SLP outpoints 
@@ -607,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -628,6 +728,7 @@ Send some SLP token amount to a given cash address
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -640,9 +741,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_send_request = mainnet.SlpSendRequest() # SlpSendRequest | place an SLP send request
@@ -667,7 +777,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -690,6 +800,7 @@ Send all available SLP funds to a given address
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -702,9 +813,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_send_max_request = mainnet.SlpSendMaxRequest() # SlpSendMaxRequest | Request to send all available SLP funds to a given address
@@ -729,7 +849,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -751,6 +871,7 @@ Get information about the token
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -763,9 +884,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     slp_token_info_request = mainnet.SlpTokenInfoRequest() # SlpTokenInfoRequest | Request to get information about the token 
@@ -790,7 +920,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -811,6 +941,7 @@ Get detailed information about unspent SLP outputs (utxos)
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -823,9 +954,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletSlpApi(api_client)
     serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | Request detailed list of unspent SLP transaction outputs 
@@ -850,7 +990,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

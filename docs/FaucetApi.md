@@ -16,6 +16,7 @@ Get addresses to return back or donate the testnet bch and tokens
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -28,9 +29,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.FaucetApi(api_client)
     
@@ -51,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -73,6 +83,7 @@ Get testnet bch
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -85,9 +96,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.FaucetApi(api_client)
     get_testnet_bch_request = mainnet.GetTestnetBchRequest() # GetTestnetBchRequest | Request to bch faucet 
@@ -112,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -134,6 +154,7 @@ Get testnet slp tokens
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -146,9 +167,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.FaucetApi(api_client)
     get_testnet_slp_request = mainnet.GetTestnetSlpRequest() # GetTestnetSlpRequest | Request to slp faucet 
@@ -173,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

@@ -14,6 +14,7 @@ Create a webhook to watch cashaddress balance and transactions.
 
 ### Example
 
+* Bearer Authentication (bearerAuth):
 ```python
 from __future__ import print_function
 import time
@@ -26,9 +27,18 @@ configuration = mainnet.Configuration(
     host = "https://rest-unstable.mainnet.cash"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with mainnet.ApiClient() as api_client:
+with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WebhookApi(api_client)
     watch_address_request = mainnet.WatchAddressRequest() # WatchAddressRequest | Based on the 'type' parameter the webhook will be triggered to either post balance or raw transactions to the 'url': - 'transaction:in' for incoming BCH transactions - 'transaction:out' for outgoing BCH transactions - 'transaction:in,out' both for incoming and outgoing BCH transactions - 'balance' will post the object according to 'BalanceResponse' schema - 'slptransaction:in' for incoming SLP transactions - 'slptransaction:out' for outgoing SLP transactions - 'slptransaction:in,out' both for incoming and outgoing SLP transactions - 'slpbalance' will post the object according to 'SlpBalanceResponse' schema  'tokenId' parameter is mandatory when using SLP webhooks. 
@@ -53,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
