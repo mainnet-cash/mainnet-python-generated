@@ -16,6 +16,11 @@ docs/ContractResponse.md
 docs/ConvertRequest.md
 docs/CreateSignedMessageRequest.md
 docs/DepositAddressResponse.md
+docs/ElectrumRawTransaction.md
+docs/ElectrumRawTransactionScriptPubKey.md
+docs/ElectrumRawTransactionScriptSig.md
+docs/ElectrumRawTransactionVin.md
+docs/ElectrumRawTransactionVout.md
 docs/Error.md
 docs/EscrowFnRequest.md
 docs/EscrowRequest.md
@@ -59,6 +64,7 @@ docs/SlpUtxo.md
 docs/SlpUtxoResponse.md
 docs/UnitType.md
 docs/UtilApi.md
+docs/UtilDecodeTransactionRequest.md
 docs/Utxo.md
 docs/UtxoResponse.md
 docs/VerifySignedMessageRequest.md
@@ -73,6 +79,7 @@ docs/WalletRequest.md
 docs/WalletResponse.md
 docs/WalletSlpApi.md
 docs/WalletType.md
+docs/WalletUtilApi.md
 docs/WatchAddressRequest.md
 docs/WatchAddressResponse.md
 docs/WebhookApi.md
@@ -88,6 +95,7 @@ mainnet/api/mine_api.py
 mainnet/api/util_api.py
 mainnet/api/wallet_api.py
 mainnet/api/wallet_slp_api.py
+mainnet/api/wallet_util_api.py
 mainnet/api/webhook_api.py
 mainnet/api_client.py
 mainnet/configuration.py
@@ -104,6 +112,11 @@ mainnet/models/contract_response.py
 mainnet/models/convert_request.py
 mainnet/models/create_signed_message_request.py
 mainnet/models/deposit_address_response.py
+mainnet/models/electrum_raw_transaction.py
+mainnet/models/electrum_raw_transaction_script_pub_key.py
+mainnet/models/electrum_raw_transaction_script_sig.py
+mainnet/models/electrum_raw_transaction_vin.py
+mainnet/models/electrum_raw_transaction_vout.py
 mainnet/models/error.py
 mainnet/models/escrow_fn_request.py
 mainnet/models/escrow_request.py
@@ -144,6 +157,7 @@ mainnet/models/slp_token_info_response_item.py
 mainnet/models/slp_utxo.py
 mainnet/models/slp_utxo_response.py
 mainnet/models/unit_type.py
+mainnet/models/util_decode_transaction_request.py
 mainnet/models/utxo.py
 mainnet/models/utxo_response.py
 mainnet/models/verify_signed_message_request.py
@@ -179,6 +193,11 @@ test/test_contract_response.py
 test/test_convert_request.py
 test/test_create_signed_message_request.py
 test/test_deposit_address_response.py
+test/test_electrum_raw_transaction.py
+test/test_electrum_raw_transaction_script_pub_key.py
+test/test_electrum_raw_transaction_script_sig.py
+test/test_electrum_raw_transaction_vin.py
+test/test_electrum_raw_transaction_vout.py
 test/test_error.py
 test/test_escrow_fn_request.py
 test/test_escrow_request.py
@@ -222,6 +241,7 @@ test/test_slp_utxo.py
 test/test_slp_utxo_response.py
 test/test_unit_type.py
 test/test_util_api.py
+test/test_util_decode_transaction_request.py
 test/test_utxo.py
 test/test_utxo_response.py
 test/test_verify_signed_message_request.py
@@ -236,6 +256,7 @@ test/test_wallet_request.py
 test/test_wallet_response.py
 test/test_wallet_slp_api.py
 test/test_wallet_type.py
+test/test_wallet_util_api.py
 test/test_watch_address_request.py
 test/test_watch_address_response.py
 test/test_webhook_api.py

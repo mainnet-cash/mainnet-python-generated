@@ -10,4 +10,5 @@ from mainnet.api.mine_api import MineApi
 from mainnet.api.util_api import UtilApi
 from mainnet.api.wallet_api import WalletApi
 from mainnet.api.wallet_slp_api import WalletSlpApi
+from mainnet.api.wallet_util_api import WalletUtilApi
 from mainnet.api.webhook_api import WebhookApi
