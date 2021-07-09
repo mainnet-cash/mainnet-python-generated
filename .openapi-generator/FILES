@@ -11,6 +11,8 @@ docs/ContractApi.md
 docs/ContractEscrowApi.md
 docs/ContractFnRequest.md
 docs/ContractFnResponse.md
+docs/ContractInfoRequest.md
+docs/ContractInfoResponse.md
 docs/ContractRequest.md
 docs/ContractResponse.md
 docs/ConvertRequest.md
@@ -107,6 +109,8 @@ mainnet/models/cashscript_receipt.py
 mainnet/models/contract.py
 mainnet/models/contract_fn_request.py
 mainnet/models/contract_fn_response.py
+mainnet/models/contract_info_request.py
+mainnet/models/contract_info_response.py
 mainnet/models/contract_request.py
 mainnet/models/contract_response.py
 mainnet/models/convert_request.py
@@ -188,6 +192,8 @@ test/test_contract_api.py
 test/test_contract_escrow_api.py
 test/test_contract_fn_request.py
 test/test_contract_fn_response.py
+test/test_contract_info_request.py
+test/test_contract_info_response.py
 test/test_contract_request.py
 test/test_contract_response.py
 test/test_convert_request.py
