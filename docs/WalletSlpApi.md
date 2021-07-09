@@ -865,7 +865,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **slp_token_info**
-> SlpTokenInfoResponseItem slp_token_info(slp_token_info_request)
+> SlpTokenInfoResponse slp_token_info(slp_token_info_request)
 
 Get information about the token
 
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SlpTokenInfoResponseItem**](SlpTokenInfoResponseItem.md)
+[**SlpTokenInfoResponse**](SlpTokenInfoResponse.md)
 
 ### Authorization
 

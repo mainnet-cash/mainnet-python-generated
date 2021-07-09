@@ -59,7 +59,7 @@ docs/SlpSendRequestItem.md
 docs/SlpSendRequestOptions.md
 docs/SlpSendResponse.md
 docs/SlpTokenInfoRequest.md
-docs/SlpTokenInfoResponseItem.md
+docs/SlpTokenInfoResponse.md
 docs/SlpUtxo.md
 docs/SlpUtxoResponse.md
 docs/UnitType.md
@@ -153,7 +153,7 @@ mainnet/models/slp_send_request_item.py
 mainnet/models/slp_send_request_options.py
 mainnet/models/slp_send_response.py
 mainnet/models/slp_token_info_request.py
-mainnet/models/slp_token_info_response_item.py
+mainnet/models/slp_token_info_response.py
 mainnet/models/slp_utxo.py
 mainnet/models/slp_utxo_response.py
 mainnet/models/unit_type.py
@@ -236,7 +236,7 @@ test/test_slp_send_request_item.py
 test/test_slp_send_request_options.py
 test/test_slp_send_response.py
 test/test_slp_token_info_request.py
-test/test_slp_token_info_response_item.py
+test/test_slp_token_info_response.py
 test/test_slp_utxo.py
 test/test_slp_utxo_response.py
 test/test_unit_type.py

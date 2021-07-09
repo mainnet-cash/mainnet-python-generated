@@ -1,4 +1,4 @@
-# SlpTokenInfoResponseItem
+# SlpTokenInfoResponse
 
 ## Properties
 Name | Type | Description | Notes
