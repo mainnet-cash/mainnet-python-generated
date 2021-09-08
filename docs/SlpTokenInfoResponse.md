@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
+**name** | **str** | Token name | [optional] 
 **ticker** | **str** | Token ticker | [optional] 
 **token_id** | **str** |  | [optional] 
 **initial_amount** | **str** | Value is represented as a string to avoid precision loss | [optional] 
