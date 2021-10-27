@@ -34,6 +34,10 @@ docs/FaucetApi.md
 docs/GetAddressesResponse.md
 docs/GetTestnetBchRequest.md
 docs/GetTestnetBchResponse.md
+docs/GetTestnetSbchRequest.md
+docs/GetTestnetSbchResponse.md
+docs/GetTestnetSep20Request.md
+docs/GetTestnetSep20Response.md
 docs/GetTestnetSlpRequest.md
 docs/GetTestnetSlpResponse.md
 docs/MaxAmountToSendRequest.md
@@ -89,6 +93,7 @@ docs/SmartBchSendRequestItem.md
 docs/SmartBchSendRequestItemAnyOf.md
 docs/SmartBchSendRequestOptions.md
 docs/SmartBchSendResponseItem.md
+docs/SmartBchSep20AllBalancesRequest.md
 docs/SmartBchSep20BalanceRequest.md
 docs/SmartBchSep20BalanceResponse.md
 docs/SmartBchSep20GenesisRequest.md
@@ -174,6 +179,10 @@ mainnet/models/escrow_response.py
 mainnet/models/get_addresses_response.py
 mainnet/models/get_testnet_bch_request.py
 mainnet/models/get_testnet_bch_response.py
+mainnet/models/get_testnet_sbch_request.py
+mainnet/models/get_testnet_sbch_response.py
+mainnet/models/get_testnet_sep20_request.py
+mainnet/models/get_testnet_sep20_response.py
 mainnet/models/get_testnet_slp_request.py
 mainnet/models/get_testnet_slp_response.py
 mainnet/models/max_amount_to_send_request.py
@@ -228,6 +237,7 @@ mainnet/models/smart_bch_send_request_item.py
 mainnet/models/smart_bch_send_request_item_any_of.py
 mainnet/models/smart_bch_send_request_options.py
 mainnet/models/smart_bch_send_response_item.py
+mainnet/models/smart_bch_sep20_all_balances_request.py
 mainnet/models/smart_bch_sep20_balance_request.py
 mainnet/models/smart_bch_sep20_balance_response.py
 mainnet/models/smart_bch_sep20_genesis_request.py
@@ -295,6 +305,10 @@ test/test_faucet_api.py
 test/test_get_addresses_response.py
 test/test_get_testnet_bch_request.py
 test/test_get_testnet_bch_response.py
+test/test_get_testnet_sbch_request.py
+test/test_get_testnet_sbch_response.py
+test/test_get_testnet_sep20_request.py
+test/test_get_testnet_sep20_response.py
 test/test_get_testnet_slp_request.py
 test/test_get_testnet_slp_response.py
 test/test_max_amount_to_send_request.py
@@ -350,6 +364,7 @@ test/test_smart_bch_send_request_item.py
 test/test_smart_bch_send_request_item_any_of.py
 test/test_smart_bch_send_request_options.py
 test/test_smart_bch_send_response_item.py
+test/test_smart_bch_sep20_all_balances_request.py
 test/test_smart_bch_sep20_balance_request.py
 test/test_smart_bch_sep20_balance_response.py
 test/test_smart_bch_sep20_genesis_request.py

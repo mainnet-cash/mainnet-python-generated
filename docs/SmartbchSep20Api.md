@@ -4,6 +4,7 @@ All URIs are relative to *https://rest-unstable.mainnet.cash*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**smart_bch_sep20_all_balances**](SmartbchSep20Api.md#smart_bch_sep20_all_balances) | **POST** /smartbch/sep20/all_balances | Get all SmartBch SEP20 balances of the wallet
 [**smart_bch_sep20_balance**](SmartbchSep20Api.md#smart_bch_sep20_balance) | **POST** /smartbch/sep20/balance | Get total SmartBch SEP20 token balance of the wallet
 [**smart_bch_sep20_deposit_address**](SmartbchSep20Api.md#smart_bch_sep20_deposit_address) | **POST** /smartbch/sep20/deposit_address | Get an SmartBch SEP20 deposit address
 [**smart_bch_sep20_deposit_qr**](SmartbchSep20Api.md#smart_bch_sep20_deposit_qr) | **POST** /smartbch/sep20/deposit_qr | Get an SmartBch SEP20 receiving address as a qrcode
@@ -13,6 +14,76 @@ Method | HTTP request | Description
 [**smart_bch_sep20_send_max**](SmartbchSep20Api.md#smart_bch_sep20_send_max) | **POST** /smartbch/sep20/send_max | Send all available SmartBch SEP20 token funds to a given address
 [**smart_bch_sep20_token_info**](SmartbchSep20Api.md#smart_bch_sep20_token_info) | **POST** /smartbch/sep20/token_info | Get information about the SmartBch SEP20 token
 
+
+# **smart_bch_sep20_all_balances**
+> list[SmartBchSep20BalanceResponse] smart_bch_sep20_all_balances(smart_bch_sep20_all_balances_request)
+
+Get all SmartBch SEP20 balances of the wallet
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.SmartbchSep20Api(api_client)
+    smart_bch_sep20_all_balances_request = mainnet.SmartBchSep20AllBalancesRequest() # SmartBchSep20AllBalancesRequest | Request for a wallet SEP20 token balances. Does a deep blockchain scan for tokens transferred to or from this address Might take a long time to run and time-out. 
+
+    try:
+        # Get all SmartBch SEP20 balances of the wallet
+        api_response = api_instance.smart_bch_sep20_all_balances(smart_bch_sep20_all_balances_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SmartbchSep20Api->smart_bch_sep20_all_balances: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **smart_bch_sep20_all_balances_request** | [**SmartBchSep20AllBalancesRequest**](SmartBchSep20AllBalancesRequest.md)| Request for a wallet SEP20 token balances. Does a deep blockchain scan for tokens transferred to or from this address Might take a long time to run and time-out.  | 
+
+### Return type
+
+[**list[SmartBchSep20BalanceResponse]**](SmartBchSep20BalanceResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **smart_bch_sep20_balance**
 > SmartBchSep20BalanceResponse smart_bch_sep20_balance(smart_bch_sep20_balance_request)
