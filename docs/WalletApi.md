@@ -14,9 +14,8 @@ Method | HTTP request | Description
 [**replace_named**](WalletApi.md#replace_named) | **POST** /wallet/replace_named | Replace (recover) named wallet with a new walletId. If wallet with a provided name does not exist yet, it will be creted with a &#x60;walletId&#x60; supplied If wallet exists it will be overwritten without exception 
 [**send**](WalletApi.md#send) | **POST** /wallet/send | Send some amount to a given address
 [**send_max**](WalletApi.md#send_max) | **POST** /wallet/send_max | Send all available funds to a given address
-[**signed_message_sign**](WalletApi.md#signed_message_sign) | **POST** /wallet/signed/sign | Returns the message signature
-[**signed_message_verify**](WalletApi.md#signed_message_verify) | **POST** /wallet/signed/verify | Returns a boolean indicating whether message was valid for a given address
 [**utxos**](WalletApi.md#utxos) | **POST** /wallet/utxo | Get detailed information about unspent outputs (utxos)
+[**xpubkeys**](WalletApi.md#xpubkeys) | **POST** /wallet/xpubkeys | A set of xpubkeys and paths for the wallet.
 
 
 # **balance**
@@ -727,146 +726,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **signed_message_sign**
-> SignedMessageResponse signed_message_sign(create_signed_message_request=create_signed_message_request)
-
-Returns the message signature
-
-### Example
-
-* Bearer Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import mainnet
-from mainnet.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mainnet.Configuration(
-    host = "https://rest-unstable.mainnet.cash"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearerAuth
-configuration = mainnet.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with mainnet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = mainnet.WalletApi(api_client)
-    create_signed_message_request = mainnet.CreateSignedMessageRequest() # CreateSignedMessageRequest | Sign a message  (optional)
-
-    try:
-        # Returns the message signature
-        api_response = api_instance.signed_message_sign(create_signed_message_request=create_signed_message_request)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WalletApi->signed_message_sign: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_signed_message_request** | [**CreateSignedMessageRequest**](CreateSignedMessageRequest.md)| Sign a message  | [optional] 
-
-### Return type
-
-[**SignedMessageResponse**](SignedMessageResponse.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **signed_message_verify**
-> VerifySignedMessageResponse signed_message_verify(verify_signed_message_request=verify_signed_message_request)
-
-Returns a boolean indicating whether message was valid for a given address
-
-### Example
-
-* Bearer Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import mainnet
-from mainnet.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mainnet.Configuration(
-    host = "https://rest-unstable.mainnet.cash"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearerAuth
-configuration = mainnet.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with mainnet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = mainnet.WalletApi(api_client)
-    verify_signed_message_request = mainnet.VerifySignedMessageRequest() # VerifySignedMessageRequest | Sign a message  (optional)
-
-    try:
-        # Returns a boolean indicating whether message was valid for a given address
-        api_response = api_instance.signed_message_verify(verify_signed_message_request=verify_signed_message_request)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WalletApi->signed_message_verify: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **verify_signed_message_request** | [**VerifySignedMessageRequest**](VerifySignedMessageRequest.md)| Sign a message  | [optional] 
-
-### Return type
-
-[**VerifySignedMessageResponse**](VerifySignedMessageResponse.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **utxos**
 > UtxoResponse utxos(serialized_wallet)
 
@@ -920,6 +779,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UtxoResponse**](UtxoResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **xpubkeys**
+> XPubKeyResponse xpubkeys(x_pub_key_request)
+
+A set of xpubkeys and paths for the wallet.
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    x_pub_key_request = mainnet.XPubKeyRequest() # XPubKeyRequest | x 
+
+    try:
+        # A set of xpubkeys and paths for the wallet.
+        api_response = api_instance.xpubkeys(x_pub_key_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->xpubkeys: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_pub_key_request** | [**XPubKeyRequest**](XPubKeyRequest.md)| x  | 
+
+### Return type
+
+[**XPubKeyResponse**](XPubKeyResponse.md)
 
 ### Authorization
 
