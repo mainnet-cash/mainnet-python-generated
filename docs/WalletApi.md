@@ -8,12 +8,14 @@ Method | HTTP request | Description
 [**create_wallet**](WalletApi.md#create_wallet) | **POST** /wallet/create | create a new wallet
 [**deposit_address**](WalletApi.md#deposit_address) | **POST** /wallet/deposit_address | Get a deposit address in cash address format
 [**deposit_qr**](WalletApi.md#deposit_qr) | **POST** /wallet/deposit_qr | Get receiving cash address as a qrcode
+[**encode_transaction**](WalletApi.md#encode_transaction) | **POST** /wallet/encode_transaction | Encode and sign a transaction given a list of sendRequests, options and estimate fees
 [**info**](WalletApi.md#info) | **POST** /wallet/info | Get information about a wallet
 [**max_amount_to_send**](WalletApi.md#max_amount_to_send) | **POST** /wallet/max_amount_to_send | Get maximum spendable amount
 [**named_exists**](WalletApi.md#named_exists) | **POST** /wallet/named_exists | Check if a named wallet already exists
 [**replace_named**](WalletApi.md#replace_named) | **POST** /wallet/replace_named | Replace (recover) named wallet with a new walletId. If wallet with a provided name does not exist yet, it will be creted with a &#x60;walletId&#x60; supplied If wallet exists it will be overwritten without exception 
 [**send**](WalletApi.md#send) | **POST** /wallet/send | Send some amount to a given address
 [**send_max**](WalletApi.md#send_max) | **POST** /wallet/send_max | Send all available funds to a given address
+[**submit_transaction**](WalletApi.md#submit_transaction) | **POST** /wallet/submit_transaction | submit an encoded and signed transaction to the network
 [**utxos**](WalletApi.md#utxos) | **POST** /wallet/utxo | Get detailed information about unspent outputs (utxos)
 [**xpubkeys**](WalletApi.md#xpubkeys) | **POST** /wallet/xpubkeys | A set of xpubkeys and paths for the wallet.
 
@@ -296,6 +298,78 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A Qr code image data encoded string in the src field suitable for inclusion in html using:    - \\&lt;img src\\&#x3D;\\\&quot;{response.src}\&quot;\\&gt;  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **encode_transaction**
+> EncodeTransactionResponse encode_transaction(send_request)
+
+Encode and sign a transaction given a list of sendRequests, options and estimate fees
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    send_request = mainnet.SendRequest() # SendRequest | encode a transaction
+
+    try:
+        # Encode and sign a transaction given a list of sendRequests, options and estimate fees
+        api_response = api_instance.encode_transaction(send_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->encode_transaction: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **send_request** | [**SendRequest**](SendRequest.md)| encode a transaction | 
+
+### Return type
+
+[**EncodeTransactionResponse**](EncodeTransactionResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | transaction accepted |  -  |
+**400** | Invalid Request |  -  |
+**418** | Invalid network for given address |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -723,6 +797,78 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **202** | transaction accepted |  -  |
 **400** | Invalid Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **submit_transaction**
+> SubmitTransactionResponse submit_transaction(submit_transaction_request)
+
+submit an encoded and signed transaction to the network
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    submit_transaction_request = mainnet.SubmitTransactionRequest() # SubmitTransactionRequest | submit an encoded and signed transaction to the network
+
+    try:
+        # submit an encoded and signed transaction to the network
+        api_response = api_instance.submit_transaction(submit_transaction_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->submit_transaction: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **submit_transaction_request** | [**SubmitTransactionRequest**](SubmitTransactionRequest.md)| submit an encoded and signed transaction to the network | 
+
+### Return type
+
+[**SubmitTransactionResponse**](SubmitTransactionResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | transaction accepted |  -  |
+**400** | Invalid Request |  -  |
+**418** | Invalid network for given address |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -23,6 +23,7 @@ docs/ElectrumRawTransactionScriptPubKey.md
 docs/ElectrumRawTransactionScriptSig.md
 docs/ElectrumRawTransactionVin.md
 docs/ElectrumRawTransactionVout.md
+docs/EncodeTransactionResponse.md
 docs/Error.md
 docs/EscrowContract.md
 docs/EscrowFnRequest.md
@@ -112,6 +113,8 @@ docs/SmartBchTransactionReceipt.md
 docs/SmartbchContractApi.md
 docs/SmartbchSep20Api.md
 docs/SmartbchWalletApi.md
+docs/SubmitTransactionRequest.md
+docs/SubmitTransactionResponse.md
 docs/UnitType.md
 docs/UtilApi.md
 docs/UtilDecodeTransactionRequest.md
@@ -177,6 +180,7 @@ mainnet/models/electrum_raw_transaction_script_pub_key.py
 mainnet/models/electrum_raw_transaction_script_sig.py
 mainnet/models/electrum_raw_transaction_vin.py
 mainnet/models/electrum_raw_transaction_vout.py
+mainnet/models/encode_transaction_response.py
 mainnet/models/error.py
 mainnet/models/escrow_contract.py
 mainnet/models/escrow_fn_request.py
@@ -261,6 +265,8 @@ mainnet/models/smart_bch_sep20_send_request_item.py
 mainnet/models/smart_bch_sep20_token_info_request.py
 mainnet/models/smart_bch_sep20_token_info_response.py
 mainnet/models/smart_bch_transaction_receipt.py
+mainnet/models/submit_transaction_request.py
+mainnet/models/submit_transaction_response.py
 mainnet/models/unit_type.py
 mainnet/models/util_decode_transaction_request.py
 mainnet/models/utxo.py
@@ -308,6 +314,7 @@ test/test_electrum_raw_transaction_script_pub_key.py
 test/test_electrum_raw_transaction_script_sig.py
 test/test_electrum_raw_transaction_vin.py
 test/test_electrum_raw_transaction_vout.py
+test/test_encode_transaction_response.py
 test/test_error.py
 test/test_escrow_contract.py
 test/test_escrow_fn_request.py
@@ -397,6 +404,8 @@ test/test_smart_bch_transaction_receipt.py
 test/test_smartbch_contract_api.py
 test/test_smartbch_sep20_api.py
 test/test_smartbch_wallet_api.py
+test/test_submit_transaction_request.py
+test/test_submit_transaction_response.py
 test/test_unit_type.py
 test/test_util_api.py
 test/test_util_decode_transaction_request.py
