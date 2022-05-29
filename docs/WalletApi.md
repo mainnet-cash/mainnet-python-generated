@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **encode_transaction**
-> EncodeTransactionResponse encode_transaction(send_request)
+> EncodeTransactionResponse encode_transaction(encode_transaction_request)
 
 Encode and sign a transaction given a list of sendRequests, options and estimate fees
 
@@ -335,11 +335,11 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    send_request = mainnet.SendRequest() # SendRequest | encode a transaction
+    encode_transaction_request = mainnet.EncodeTransactionRequest() # EncodeTransactionRequest | encode a transaction
 
     try:
         # Encode and sign a transaction given a list of sendRequests, options and estimate fees
-        api_response = api_instance.encode_transaction(send_request)
+        api_response = api_instance.encode_transaction(encode_transaction_request)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WalletApi->encode_transaction: %s\n" % e)
@@ -349,7 +349,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **send_request** | [**SendRequest**](SendRequest.md)| encode a transaction | 
+ **encode_transaction_request** | [**EncodeTransactionRequest**](EncodeTransactionRequest.md)| encode a transaction | 
 
 ### Return type
 

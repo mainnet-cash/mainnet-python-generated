@@ -23,6 +23,7 @@ docs/ElectrumRawTransactionScriptPubKey.md
 docs/ElectrumRawTransactionScriptSig.md
 docs/ElectrumRawTransactionVin.md
 docs/ElectrumRawTransactionVout.md
+docs/EncodeTransactionRequest.md
 docs/EncodeTransactionResponse.md
 docs/Error.md
 docs/EscrowContract.md
@@ -180,6 +181,7 @@ mainnet/models/electrum_raw_transaction_script_pub_key.py
 mainnet/models/electrum_raw_transaction_script_sig.py
 mainnet/models/electrum_raw_transaction_vin.py
 mainnet/models/electrum_raw_transaction_vout.py
+mainnet/models/encode_transaction_request.py
 mainnet/models/encode_transaction_response.py
 mainnet/models/error.py
 mainnet/models/escrow_contract.py
@@ -314,6 +316,7 @@ test/test_electrum_raw_transaction_script_pub_key.py
 test/test_electrum_raw_transaction_script_sig.py
 test/test_electrum_raw_transaction_vin.py
 test/test_electrum_raw_transaction_vout.py
+test/test_encode_transaction_request.py
 test/test_encode_transaction_response.py
 test/test_error.py
 test/test_escrow_contract.py

@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import mainnet
-from mainnet.models.send_request import SendRequest  # noqa: E501
+from mainnet.models.encode_transaction_request import EncodeTransactionRequest  # noqa: E501
 from mainnet.rest import ApiException
 
-class TestSendRequest(unittest.TestCase):
-    """SendRequest unit test stubs"""
+class TestEncodeTransactionRequest(unittest.TestCase):
+    """EncodeTransactionRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,14 +30,15 @@ class TestSendRequest(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test SendRequest
+        """Test EncodeTransactionRequest
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mainnet.models.send_request.SendRequest()  # noqa: E501
+        # model = mainnet.models.encode_transaction_request.EncodeTransactionRequest()  # noqa: E501
         if include_optional :
-            return SendRequest(
+            return EncodeTransactionRequest(
                 wallet_id = 'wif:testnet:cNfsPtqN2bMRS7vH5qd8tR8GMvgXyL5BjnGAKgZ8DYEiCrCCQcP6', 
+                discard_change = True, 
                 to = null, 
                 options = mainnet.models.send_request_options.SendRequestOptions(
                     utxo_ids = [
@@ -51,11 +52,11 @@ class TestSendRequest(unittest.TestCase):
                     fee_paid_by = 'change', )
             )
         else :
-            return SendRequest(
+            return EncodeTransactionRequest(
         )
 
-    def testSendRequest(self):
-        """Test SendRequest"""
+    def testEncodeTransactionRequest(self):
+        """Test EncodeTransactionRequest"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 
