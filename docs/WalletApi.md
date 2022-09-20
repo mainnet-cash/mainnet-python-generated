@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**deposit_address**](WalletApi.md#deposit_address) | **POST** /wallet/deposit_address | Get a deposit address in cash address format
 [**deposit_qr**](WalletApi.md#deposit_qr) | **POST** /wallet/deposit_qr | Get receiving cash address as a qrcode
 [**encode_transaction**](WalletApi.md#encode_transaction) | **POST** /wallet/encode_transaction | Encode and sign a transaction given a list of sendRequests, options and estimate fees
+[**get_history**](WalletApi.md#get_history) | **POST** /wallet/get_history | Get a simplified list of transactions related to a wallet
 [**info**](WalletApi.md#info) | **POST** /wallet/info | Get information about a wallet
 [**max_amount_to_send**](WalletApi.md#max_amount_to_send) | **POST** /wallet/max_amount_to_send | Get maximum spendable amount
 [**named_exists**](WalletApi.md#named_exists) | **POST** /wallet/named_exists | Check if a named wallet already exists
@@ -370,6 +371,76 @@ Name | Type | Description  | Notes
 **202** | transaction accepted |  -  |
 **400** | Invalid Request |  -  |
 **418** | Invalid network for given address |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_history**
+> HistoryResponse get_history(history_request)
+
+Get a simplified list of transactions related to a wallet
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    history_request = mainnet.HistoryRequest() # HistoryRequest | Request for a wallet history 
+
+    try:
+        # Get a simplified list of transactions related to a wallet
+        api_response = api_instance.get_history(history_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->get_history: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **history_request** | [**HistoryRequest**](HistoryRequest.md)| Request for a wallet history  | 
+
+### Return type
+
+[**HistoryResponse**](HistoryResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

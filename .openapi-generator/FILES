@@ -45,6 +45,8 @@ docs/GetTestnetSlpRequest.md
 docs/GetTestnetSlpResponse.md
 docs/GetXpubKeyInfoRequest.md
 docs/GetXpubKeyInfoResponse.md
+docs/HistoryRequest.md
+docs/HistoryResponse.md
 docs/MaxAmountToSendRequest.md
 docs/MineApi.md
 docs/MineRequest.md
@@ -116,6 +118,7 @@ docs/SmartbchSep20Api.md
 docs/SmartbchWalletApi.md
 docs/SubmitTransactionRequest.md
 docs/SubmitTransactionResponse.md
+docs/TransactionHistoryItem.md
 docs/UnitType.md
 docs/UtilApi.md
 docs/UtilDecodeTransactionRequest.md
@@ -202,6 +205,8 @@ mainnet/models/get_testnet_slp_request.py
 mainnet/models/get_testnet_slp_response.py
 mainnet/models/get_xpub_key_info_request.py
 mainnet/models/get_xpub_key_info_response.py
+mainnet/models/history_request.py
+mainnet/models/history_response.py
 mainnet/models/max_amount_to_send_request.py
 mainnet/models/mine_request.py
 mainnet/models/network_enum.py
@@ -269,6 +274,7 @@ mainnet/models/smart_bch_sep20_token_info_response.py
 mainnet/models/smart_bch_transaction_receipt.py
 mainnet/models/submit_transaction_request.py
 mainnet/models/submit_transaction_response.py
+mainnet/models/transaction_history_item.py
 mainnet/models/unit_type.py
 mainnet/models/util_decode_transaction_request.py
 mainnet/models/utxo.py
@@ -338,6 +344,8 @@ test/test_get_testnet_slp_request.py
 test/test_get_testnet_slp_response.py
 test/test_get_xpub_key_info_request.py
 test/test_get_xpub_key_info_response.py
+test/test_history_request.py
+test/test_history_response.py
 test/test_max_amount_to_send_request.py
 test/test_mine_api.py
 test/test_mine_request.py
@@ -409,6 +417,7 @@ test/test_smartbch_sep20_api.py
 test/test_smartbch_wallet_api.py
 test/test_submit_transaction_request.py
 test/test_submit_transaction_response.py
+test/test_transaction_history_item.py
 test/test_unit_type.py
 test/test_util_api.py
 test/test_util_decode_transaction_request.py
