@@ -3,7 +3,6 @@
 .openapi-generator-ignore
 .travis.yml
 README.md
-docs/AuthChainElement.md
 docs/BalanceRequest.md
 docs/BalanceResponse.md
 docs/CashscriptReceipt.md
@@ -48,11 +47,6 @@ docs/GetXpubKeyInfoRequest.md
 docs/GetXpubKeyInfoResponse.md
 docs/HistoryRequest.md
 docs/HistoryResponse.md
-docs/InlineObject.md
-docs/InlineObject1.md
-docs/InlineObject2.md
-docs/InlineObject3.md
-docs/InlineObject4.md
 docs/MaxAmountToSendRequest.md
 docs/MineApi.md
 docs/MineRequest.md
@@ -124,11 +118,6 @@ docs/SmartbchSep20Api.md
 docs/SmartbchWalletApi.md
 docs/SubmitTransactionRequest.md
 docs/SubmitTransactionResponse.md
-docs/TokenBurnRequest.md
-docs/TokenGenesisRequest.md
-docs/TokenMintRequest.md
-docs/TokenMintRequestRequests.md
-docs/TokenSendRequest.md
 docs/TransactionHistoryItem.md
 docs/UnitType.md
 docs/UtilApi.md
@@ -139,7 +128,6 @@ docs/VerifySignedMessageRequest.md
 docs/VerifySignedMessageResponse.md
 docs/VerifySignedMessageResponseDetails.md
 docs/WalletApi.md
-docs/WalletBcmrApi.md
 docs/WalletInfo.md
 docs/WalletMnemonic.md
 docs/WalletNamedExistsRequest.md
@@ -170,7 +158,6 @@ mainnet/api/smartbch_sep20_api.py
 mainnet/api/smartbch_wallet_api.py
 mainnet/api/util_api.py
 mainnet/api/wallet_api.py
-mainnet/api/wallet_bcmr_api.py
 mainnet/api/wallet_signed_api.py
 mainnet/api/wallet_slp_api.py
 mainnet/api/wallet_util_api.py
@@ -179,7 +166,6 @@ mainnet/api_client.py
 mainnet/configuration.py
 mainnet/exceptions.py
 mainnet/models/__init__.py
-mainnet/models/auth_chain_element.py
 mainnet/models/balance_request.py
 mainnet/models/balance_response.py
 mainnet/models/cashscript_receipt.py
@@ -221,11 +207,6 @@ mainnet/models/get_xpub_key_info_request.py
 mainnet/models/get_xpub_key_info_response.py
 mainnet/models/history_request.py
 mainnet/models/history_response.py
-mainnet/models/inline_object.py
-mainnet/models/inline_object1.py
-mainnet/models/inline_object2.py
-mainnet/models/inline_object3.py
-mainnet/models/inline_object4.py
 mainnet/models/max_amount_to_send_request.py
 mainnet/models/mine_request.py
 mainnet/models/network_enum.py
@@ -293,11 +274,6 @@ mainnet/models/smart_bch_sep20_token_info_response.py
 mainnet/models/smart_bch_transaction_receipt.py
 mainnet/models/submit_transaction_request.py
 mainnet/models/submit_transaction_response.py
-mainnet/models/token_burn_request.py
-mainnet/models/token_genesis_request.py
-mainnet/models/token_mint_request.py
-mainnet/models/token_mint_request_requests.py
-mainnet/models/token_send_request.py
 mainnet/models/transaction_history_item.py
 mainnet/models/unit_type.py
 mainnet/models/util_decode_transaction_request.py
@@ -326,7 +302,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_auth_chain_element.py
 test/test_balance_request.py
 test/test_balance_response.py
 test/test_cashscript_receipt.py
@@ -371,11 +346,6 @@ test/test_get_xpub_key_info_request.py
 test/test_get_xpub_key_info_response.py
 test/test_history_request.py
 test/test_history_response.py
-test/test_inline_object.py
-test/test_inline_object1.py
-test/test_inline_object2.py
-test/test_inline_object3.py
-test/test_inline_object4.py
 test/test_max_amount_to_send_request.py
 test/test_mine_api.py
 test/test_mine_request.py
@@ -447,11 +417,6 @@ test/test_smartbch_sep20_api.py
 test/test_smartbch_wallet_api.py
 test/test_submit_transaction_request.py
 test/test_submit_transaction_response.py
-test/test_token_burn_request.py
-test/test_token_genesis_request.py
-test/test_token_mint_request.py
-test/test_token_mint_request_requests.py
-test/test_token_send_request.py
 test/test_transaction_history_item.py
 test/test_unit_type.py
 test/test_util_api.py
@@ -462,7 +427,6 @@ test/test_verify_signed_message_request.py
 test/test_verify_signed_message_response.py
 test/test_verify_signed_message_response_details.py
 test/test_wallet_api.py
-test/test_wallet_bcmr_api.py
 test/test_wallet_info.py
 test/test_wallet_mnemonic.py
 test/test_wallet_named_exists_request.py

@@ -5,7 +5,6 @@ All URIs are relative to *https://rest-unstable.mainnet.cash*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**util_decode_transaction**](WalletUtilApi.md#util_decode_transaction) | **POST** /wallet/util/decode_transaction | Decode a bitcoin transaction. Accepts both transaction hash or raw transaction in hex format.
-[**util_get_raw_transaction**](WalletUtilApi.md#util_get_raw_transaction) | **POST** /wallet/util/get_raw_transaction | Get bitcoin raw transaction
 
 
 # **util_decode_transaction**
@@ -61,76 +60,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ElectrumRawTransaction**](ElectrumRawTransaction.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **util_get_raw_transaction**
-> AnyOfobjectElectrumRawTransaction util_get_raw_transaction(unknown_base_type)
-
-Get bitcoin raw transaction
-
-### Example
-
-* Bearer Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import mainnet
-from mainnet.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mainnet.Configuration(
-    host = "https://rest-unstable.mainnet.cash"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearerAuth
-configuration = mainnet.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with mainnet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = mainnet.WalletUtilApi(api_client)
-    unknown_base_type = mainnet.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE | Request to get raw transaction 
-
-    try:
-        # Get bitcoin raw transaction
-        api_response = api_instance.util_get_raw_transaction(unknown_base_type)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WalletUtilApi->util_get_raw_transaction: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)| Request to get raw transaction  | 
-
-### Return type
-
-[**AnyOfobjectElectrumRawTransaction**](AnyOfobjectElectrumRawTransaction.md)
 
 ### Authorization
 

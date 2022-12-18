@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **to** | **str** | cashaddr of the receiving cash address. | [optional] 
-**_from** | **str** | cashaddr of the sending cash address. | [optional] 
+**_from** | **str** | cashadd of the sending cash address. | [optional] 
 **unit** | [**UnitType**](UnitType.md) |  | [optional] 
 **index** | **float** | the index of the input or output in the transaction | [optional] 
 **blockheight** | **float** | the blockheight of transaction | [optional] 
