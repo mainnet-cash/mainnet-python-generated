@@ -134,7 +134,7 @@ docs/UnitType.md
 docs/UtilApi.md
 docs/UtilDecodeTransactionRequest.md
 docs/Utxo.md
-docs/UtxoResponse.md
+docs/UtxoToken.md
 docs/VerifySignedMessageRequest.md
 docs/VerifySignedMessageResponse.md
 docs/VerifySignedMessageResponseDetails.md
@@ -302,7 +302,7 @@ mainnet/models/transaction_history_item.py
 mainnet/models/unit_type.py
 mainnet/models/util_decode_transaction_request.py
 mainnet/models/utxo.py
-mainnet/models/utxo_response.py
+mainnet/models/utxo_token.py
 mainnet/models/verify_signed_message_request.py
 mainnet/models/verify_signed_message_response.py
 mainnet/models/verify_signed_message_response_details.py
@@ -457,7 +457,7 @@ test/test_unit_type.py
 test/test_util_api.py
 test/test_util_decode_transaction_request.py
 test/test_utxo.py
-test/test_utxo_response.py
+test/test_utxo_token.py
 test/test_verify_signed_message_request.py
 test/test_verify_signed_message_response.py
 test/test_verify_signed_message_response_details.py

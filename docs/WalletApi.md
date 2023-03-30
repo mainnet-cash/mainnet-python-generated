@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_token_utxos**
-> UtxoResponse get_token_utxos(inline_object)
+> list[Utxo] get_token_utxos(inline_object)
 
 Get token utxos
 
@@ -786,7 +786,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UtxoResponse**](UtxoResponse.md)
+[**list[Utxo]**](Utxo.md)
 
 ### Authorization
 
@@ -1654,7 +1654,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **utxos**
-> UtxoResponse utxos(serialized_wallet)
+> list[Utxo] utxos(serialized_wallet)
 
 Get detailed information about unspent outputs (utxos)
 
@@ -1705,7 +1705,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UtxoResponse**](UtxoResponse.md)
+[**list[Utxo]**](Utxo.md)
 
 ### Authorization
 

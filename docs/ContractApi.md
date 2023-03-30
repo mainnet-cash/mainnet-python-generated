@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contract_utxos**
-> UtxoResponse contract_utxos(contract)
+> list[Utxo] contract_utxos(contract)
 
 List specific utxos on any contract
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UtxoResponse**](UtxoResponse.md)
+[**list[Utxo]**](Utxo.md)
 
 ### Authorization
 

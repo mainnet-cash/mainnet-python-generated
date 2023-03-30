@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **escrow_utxos**
-> UtxoResponse escrow_utxos(escrow_contract)
+> list[Utxo] escrow_utxos(escrow_contract)
 
 List specific utxos on any escrow contract
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UtxoResponse**](UtxoResponse.md)
+[**list[Utxo]**](Utxo.md)
 
 ### Authorization
 
