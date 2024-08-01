@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**encode_transaction**](WalletApi.md#encode_transaction) | **POST** /wallet/encode_transaction | Encode and sign a transaction given a list of sendRequests, options and estimate fees
 [**get_all_nft_token_balances**](WalletApi.md#get_all_nft_token_balances) | **POST** /wallet/get_all_nft_token_balances | Get non-fungible token balance
 [**get_all_token_balances**](WalletApi.md#get_all_token_balances) | **POST** /wallet/get_all_token_balances | Get non-fungible token balance
-[**get_history**](WalletApi.md#get_history) | **POST** /wallet/get_history | Get a simplified list of transactions related to a wallet
+[**get_history**](WalletApi.md#get_history) | **POST** /wallet/get_history | Get a list of transactions related to a wallet
 [**get_nft_token_balance**](WalletApi.md#get_nft_token_balance) | **POST** /wallet/get_nft_token_balance | Get non-fungible token balance
 [**get_token_balance**](WalletApi.md#get_token_balance) | **POST** /wallet/get_token_balance | Get fungible token balance
 [**get_token_utxos**](WalletApi.md#get_token_utxos) | **POST** /wallet/get_token_utxos | Get token utxos
@@ -525,9 +525,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_history**
-> HistoryResponse get_history(history_request)
+> list[TransactionHistoryItem] get_history(history_request)
 
-Get a simplified list of transactions related to a wallet
+Get a list of transactions related to a wallet
 
 ### Example
 
@@ -558,10 +558,10 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    history_request = mainnet.HistoryRequest() # HistoryRequest | Request for a wallet history 
+    history_request = mainnet.HistoryRequest() # HistoryRequest | Gets transaction history of this wallet with most data decoded and ready to present to user   Note: balance calculations are valid only if querying to the blockchain tip (`toHeight` === -1, `count` === -1)   Note: this method is heavy on network calls, if invoked in browser use of cache is advised, @see `Config.UseLocalStorageCache`   Note: this method tries to recreate the history tab view of Electron Cash wallet, however, it may not be 100% accurate if the tnransaction value changes are the same in the same block (ordering) 
 
     try:
-        # Get a simplified list of transactions related to a wallet
+        # Get a list of transactions related to a wallet
         api_response = api_instance.get_history(history_request)
         pprint(api_response)
     except ApiException as e:
@@ -572,11 +572,11 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **history_request** | [**HistoryRequest**](HistoryRequest.md)| Request for a wallet history  | 
+ **history_request** | [**HistoryRequest**](HistoryRequest.md)| Gets transaction history of this wallet with most data decoded and ready to present to user   Note: balance calculations are valid only if querying to the blockchain tip (&#x60;toHeight&#x60; &#x3D;&#x3D;&#x3D; -1, &#x60;count&#x60; &#x3D;&#x3D;&#x3D; -1)   Note: this method is heavy on network calls, if invoked in browser use of cache is advised, @see &#x60;Config.UseLocalStorageCache&#x60;   Note: this method tries to recreate the history tab view of Electron Cash wallet, however, it may not be 100% accurate if the tnransaction value changes are the same in the same block (ordering)  | 
 
 ### Return type
 
-[**HistoryResponse**](HistoryResponse.md)
+[**list[TransactionHistoryItem]**](TransactionHistoryItem.md)
 
 ### Authorization
 

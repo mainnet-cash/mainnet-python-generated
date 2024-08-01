@@ -41,7 +41,7 @@ docs/GetTestnetBchResponse.md
 docs/GetXpubKeyInfoRequest.md
 docs/GetXpubKeyInfoResponse.md
 docs/HistoryRequest.md
-docs/HistoryResponse.md
+docs/InOutput.md
 docs/InlineObject.md
 docs/InlineObject1.md
 docs/InlineObject2.md
@@ -66,6 +66,8 @@ docs/SignedMessageResponseDetails.md
 docs/SignedMessageResponseRaw.md
 docs/SubmitTransactionRequest.md
 docs/SubmitTransactionResponse.md
+docs/Token.md
+docs/TokenAmountChange.md
 docs/TokenBurnRequest.md
 docs/TokenGenesisRequest.md
 docs/TokenMintRequest.md
@@ -76,7 +78,6 @@ docs/UnitType.md
 docs/UtilApi.md
 docs/UtilDecodeTransactionRequest.md
 docs/Utxo.md
-docs/UtxoToken.md
 docs/VerifySignedMessageRequest.md
 docs/VerifySignedMessageResponse.md
 docs/VerifySignedMessageResponseDetails.md
@@ -151,7 +152,7 @@ mainnet/models/get_testnet_bch_response.py
 mainnet/models/get_xpub_key_info_request.py
 mainnet/models/get_xpub_key_info_response.py
 mainnet/models/history_request.py
-mainnet/models/history_response.py
+mainnet/models/in_output.py
 mainnet/models/inline_object.py
 mainnet/models/inline_object1.py
 mainnet/models/inline_object2.py
@@ -175,6 +176,8 @@ mainnet/models/signed_message_response_details.py
 mainnet/models/signed_message_response_raw.py
 mainnet/models/submit_transaction_request.py
 mainnet/models/submit_transaction_response.py
+mainnet/models/token.py
+mainnet/models/token_amount_change.py
 mainnet/models/token_burn_request.py
 mainnet/models/token_genesis_request.py
 mainnet/models/token_mint_request.py
@@ -184,7 +187,6 @@ mainnet/models/transaction_history_item.py
 mainnet/models/unit_type.py
 mainnet/models/util_decode_transaction_request.py
 mainnet/models/utxo.py
-mainnet/models/utxo_token.py
 mainnet/models/verify_signed_message_request.py
 mainnet/models/verify_signed_message_response.py
 mainnet/models/verify_signed_message_response_details.py
@@ -246,7 +248,7 @@ test/test_get_testnet_bch_response.py
 test/test_get_xpub_key_info_request.py
 test/test_get_xpub_key_info_response.py
 test/test_history_request.py
-test/test_history_response.py
+test/test_in_output.py
 test/test_inline_object.py
 test/test_inline_object1.py
 test/test_inline_object2.py
@@ -271,6 +273,8 @@ test/test_signed_message_response_details.py
 test/test_signed_message_response_raw.py
 test/test_submit_transaction_request.py
 test/test_submit_transaction_response.py
+test/test_token.py
+test/test_token_amount_change.py
 test/test_token_burn_request.py
 test/test_token_genesis_request.py
 test/test_token_mint_request.py
@@ -281,7 +285,6 @@ test/test_unit_type.py
 test/test_util_api.py
 test/test_util_decode_transaction_request.py
 test/test_utxo.py
-test/test_utxo_token.py
 test/test_verify_signed_message_request.py
 test/test_verify_signed_message_response.py
 test/test_verify_signed_message_response_details.py

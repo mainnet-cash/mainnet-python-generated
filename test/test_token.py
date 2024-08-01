@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import mainnet
-from mainnet.models.network_enum import NetworkEnum  # noqa: E501
+from mainnet.models.token import Token  # noqa: E501
 from mainnet.rest import ApiException
 
-class TestNetworkEnum(unittest.TestCase):
-    """NetworkEnum unit test stubs"""
+class TestToken(unittest.TestCase):
+    """Token unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,21 +30,24 @@ class TestNetworkEnum(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test NetworkEnum
+        """Test Token
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mainnet.models.network_enum.NetworkEnum()  # noqa: E501
+        # model = mainnet.models.token.Token()  # noqa: E501
         if include_optional :
-            return NetworkEnum(
-                network = 'testnet'
+            return Token(
+                amount = 1.337, 
+                token_id = '0', 
+                capability = 'none', 
+                commitment = '0'
             )
         else :
-            return NetworkEnum(
+            return Token(
         )
 
-    def testNetworkEnum(self):
-        """Test NetworkEnum"""
+    def testToken(self):
+        """Test Token"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 
