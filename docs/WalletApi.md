@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**balance**](WalletApi.md#balance) | **POST** /wallet/balance | Get total balance for wallet
 [**create_wallet**](WalletApi.md#create_wallet) | **POST** /wallet/create | create a new wallet
 [**deposit_address**](WalletApi.md#deposit_address) | **POST** /wallet/deposit_address | Get a deposit address in cash address format
-[**deposit_qr**](WalletApi.md#deposit_qr) | **POST** /wallet/deposit_qr | Get receiving cash address as a qrcode
 [**encode_transaction**](WalletApi.md#encode_transaction) | **POST** /wallet/encode_transaction | Encode and sign a transaction given a list of sendRequests, options and estimate fees
 [**get_all_nft_token_balances**](WalletApi.md#get_all_nft_token_balances) | **POST** /wallet/get_all_nft_token_balances | Get non-fungible token balance
 [**get_all_token_balances**](WalletApi.md#get_all_token_balances) | **POST** /wallet/get_all_token_balances | Get non-fungible token balance
@@ -24,7 +23,6 @@ Method | HTTP request | Description
 [**submit_transaction**](WalletApi.md#submit_transaction) | **POST** /wallet/submit_transaction | submit an encoded and signed transaction to the network
 [**token_burn**](WalletApi.md#token_burn) | **POST** /wallet/token_burn | Perform an explicit token burn
 [**token_deposit_address**](WalletApi.md#token_deposit_address) | **POST** /wallet/token_deposit_address | Get a token aware deposit address in cash address format
-[**token_deposit_qr**](WalletApi.md#token_deposit_qr) | **POST** /wallet/token_deposit_qr | Get receiving token aware cash address as a qrcode
 [**token_genesis**](WalletApi.md#token_genesis) | **POST** /wallet/token_genesis | Create new token category
 [**token_mint**](WalletApi.md#token_mint) | **POST** /wallet/token_mint | Mint new non-fungible tokens
 [**utxos**](WalletApi.md#utxos) | **POST** /wallet/utxo | Get detailed information about unspent outputs (utxos)
@@ -239,76 +237,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **deposit_qr**
-> ScalableVectorGraphic deposit_qr(serialized_wallet)
-
-Get receiving cash address as a qrcode
-
-### Example
-
-* Bearer Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import mainnet
-from mainnet.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mainnet.Configuration(
-    host = "https://rest-unstable.mainnet.cash"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearerAuth
-configuration = mainnet.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with mainnet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = mainnet.WalletApi(api_client)
-    serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | Request for a deposit cash address as a Quick Response code (qrcode) 
-
-    try:
-        # Get receiving cash address as a qrcode
-        api_response = api_instance.deposit_qr(serialized_wallet)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WalletApi->deposit_qr: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **serialized_wallet** | [**SerializedWallet**](SerializedWallet.md)| Request for a deposit cash address as a Quick Response code (qrcode)  | 
-
-### Return type
-
-[**ScalableVectorGraphic**](ScalableVectorGraphic.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A Qr code image data encoded string in the src field suitable for inclusion in html using:    - \\&lt;img src\\&#x3D;\\\&quot;{response.src}\&quot;\\&gt;  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1440,76 +1368,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **token_deposit_qr**
-> ScalableVectorGraphic token_deposit_qr(serialized_wallet)
-
-Get receiving token aware cash address as a qrcode
-
-### Example
-
-* Bearer Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import mainnet
-from mainnet.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mainnet.Configuration(
-    host = "https://rest-unstable.mainnet.cash"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearerAuth
-configuration = mainnet.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with mainnet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = mainnet.WalletApi(api_client)
-    serialized_wallet = mainnet.SerializedWallet() # SerializedWallet | Request for a token aware deposit cash address as a Quick Response code (qrcode) 
-
-    try:
-        # Get receiving token aware cash address as a qrcode
-        api_response = api_instance.token_deposit_qr(serialized_wallet)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WalletApi->token_deposit_qr: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **serialized_wallet** | [**SerializedWallet**](SerializedWallet.md)| Request for a token aware deposit cash address as a Quick Response code (qrcode)  | 
-
-### Return type
-
-[**ScalableVectorGraphic**](ScalableVectorGraphic.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A Qr code image data encoded string in the src field suitable for inclusion in html using:    - \\&lt;img src\\&#x3D;\\\&quot;{response.src}\&quot;\\&gt;  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

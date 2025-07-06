@@ -52,7 +52,6 @@ docs/MineApi.md
 docs/MineRequest.md
 docs/NetworkEnum.md
 docs/OpReturnData.md
-docs/ScalableVectorGraphic.md
 docs/SendMaxRequest.md
 docs/SendMaxResponse.md
 docs/SendRequest.md
@@ -162,7 +161,6 @@ mainnet/models/max_amount_to_send_request.py
 mainnet/models/mine_request.py
 mainnet/models/network_enum.py
 mainnet/models/op_return_data.py
-mainnet/models/scalable_vector_graphic.py
 mainnet/models/send_max_request.py
 mainnet/models/send_max_response.py
 mainnet/models/send_request.py
@@ -259,7 +257,6 @@ test/test_mine_api.py
 test/test_mine_request.py
 test/test_network_enum.py
 test/test_op_return_data.py
-test/test_scalable_vector_graphic.py
 test/test_send_max_request.py
 test/test_send_max_response.py
 test/test_send_request.py
