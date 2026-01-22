@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token_id** | **str** | Token unique hexadecimal identifier, also the id of the token creation transaction | [optional] 
+**category** | **str** | Token unique hexadecimal identifier, also the id of the token creation transaction | [optional] 
 **amount** | **float** | Fungible token amount | [optional] 
 **nft_amount** | **float** | Non-fungible token amount | [optional] 
 
