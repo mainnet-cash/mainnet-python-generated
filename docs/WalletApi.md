@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -313,77 +313,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_nft_token_balances**
-> dict(str, float) get_all_nft_token_balances(inline_object5)
-
-Get non-fungible token balance
-
-### Example
-
-* Bearer Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import mainnet
-from mainnet.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mainnet.Configuration(
-    host = "https://rest-unstable.mainnet.cash"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearerAuth
-configuration = mainnet.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with mainnet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = mainnet.WalletApi(api_client)
-    inline_object5 = mainnet.InlineObject5() # InlineObject5 | 
-
-    try:
-        # Get non-fungible token balance
-        api_response = api_instance.get_all_nft_token_balances(inline_object5)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WalletApi->get_all_nft_token_balances: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline_object5** | [**InlineObject5**](InlineObject5.md)|  | 
-
-### Return type
-
-**dict(str, float)**
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_all_token_balances**
-> dict(str, float) get_all_token_balances(inline_object4)
+> dict(str, float) get_all_nft_token_balances(inline_object4)
 
 Get non-fungible token balance
 
@@ -420,7 +350,77 @@ with mainnet.ApiClient(configuration) as api_client:
 
     try:
         # Get non-fungible token balance
-        api_response = api_instance.get_all_token_balances(inline_object4)
+        api_response = api_instance.get_all_nft_token_balances(inline_object4)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->get_all_nft_token_balances: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object4** | [**InlineObject4**](InlineObject4.md)|  | 
+
+### Return type
+
+**dict(str, float)**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_token_balances**
+> dict(str, float) get_all_token_balances(inline_object3)
+
+Get non-fungible token balance
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    inline_object3 = mainnet.InlineObject3() # InlineObject3 | 
+
+    try:
+        # Get non-fungible token balance
+        api_response = api_instance.get_all_token_balances(inline_object3)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WalletApi->get_all_token_balances: %s\n" % e)
@@ -430,7 +430,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object4** | [**InlineObject4**](InlineObject4.md)|  | 
+ **inline_object3** | [**InlineObject3**](InlineObject3.md)|  | 
 
 ### Return type
 
@@ -523,79 +523,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_nft_token_balance**
-> object get_nft_token_balance(inline_object3)
+> object get_nft_token_balance(inline_object2)
 
 Get non-fungible token balance
-
-### Example
-
-* Bearer Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import mainnet
-from mainnet.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
-# See configuration.py for a list of all supported configuration parameters.
-configuration = mainnet.Configuration(
-    host = "https://rest-unstable.mainnet.cash"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearerAuth
-configuration = mainnet.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with mainnet.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = mainnet.WalletApi(api_client)
-    inline_object3 = mainnet.InlineObject3() # InlineObject3 | 
-
-    try:
-        # Get non-fungible token balance
-        api_response = api_instance.get_nft_token_balance(inline_object3)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WalletApi->get_nft_token_balance: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline_object3** | [**InlineObject3**](InlineObject3.md)|  | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_token_balance**
-> object get_token_balance(inline_object2)
-
-Get fungible token balance
 
 ### Example
 
@@ -629,11 +559,11 @@ with mainnet.ApiClient(configuration) as api_client:
     inline_object2 = mainnet.InlineObject2() # InlineObject2 | 
 
     try:
-        # Get fungible token balance
-        api_response = api_instance.get_token_balance(inline_object2)
+        # Get non-fungible token balance
+        api_response = api_instance.get_nft_token_balance(inline_object2)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling WalletApi->get_token_balance: %s\n" % e)
+        print("Exception when calling WalletApi->get_nft_token_balance: %s\n" % e)
 ```
 
 ### Parameters
@@ -662,10 +592,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_token_utxos**
-> list[Utxo] get_token_utxos(inline_object1)
+# **get_token_balance**
+> object get_token_balance(inline_object1)
 
-Get token utxos
+Get fungible token balance
 
 ### Example
 
@@ -699,8 +629,78 @@ with mainnet.ApiClient(configuration) as api_client:
     inline_object1 = mainnet.InlineObject1() # InlineObject1 | 
 
     try:
+        # Get fungible token balance
+        api_response = api_instance.get_token_balance(inline_object1)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WalletApi->get_token_balance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inline_object1** | [**InlineObject1**](InlineObject1.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_token_utxos**
+> list[Utxo] get_token_utxos(inline_object)
+
+Get token utxos
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import mainnet
+from mainnet.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://rest-unstable.mainnet.cash
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mainnet.Configuration(
+    host = "https://rest-unstable.mainnet.cash"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = mainnet.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with mainnet.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mainnet.WalletApi(api_client)
+    inline_object = mainnet.InlineObject() # InlineObject | 
+
+    try:
         # Get token utxos
-        api_response = api_instance.get_token_utxos(inline_object1)
+        api_response = api_instance.get_token_utxos(inline_object)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WalletApi->get_token_utxos: %s\n" % e)
@@ -710,7 +710,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object1** | [**InlineObject1**](InlineObject1.md)|  | 
+ **inline_object** | [**InlineObject**](InlineObject.md)|  | 
 
 ### Return type
 
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **named_exists**
-> WalletNamedExistsResponse named_exists(wallet_named_exists_request)
+> bool named_exists(wallet_named_exists_request)
 
 Check if a named wallet already exists
 
@@ -926,7 +926,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WalletNamedExistsResponse**](WalletNamedExistsResponse.md)
+**bool**
 
 ### Authorization
 
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_named**
-> WalletReplaceNamedResponse replace_named(wallet_replace_named_request)
+> bool replace_named(wallet_replace_named_request)
 
 Replace (recover) named wallet with a new walletId. If wallet with a provided name does not exist yet, it will be creted with a `walletId` supplied If wallet exists it will be overwritten without exception 
 
@@ -997,7 +997,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WalletReplaceNamedResponse**](WalletReplaceNamedResponse.md)
+**bool**
 
 ### Authorization
 
@@ -1405,7 +1405,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    token_genesis_request = mainnet.TokenGenesisRequest() # TokenGenesisRequest | Create new cashtoken, both funglible and/or non-fungible (NFT) Refer to spec https://github.com/bitjson/cashtokens Newly created token identifier can be found in `categories` field. 
+    token_genesis_request = mainnet.TokenGenesisRequest() # TokenGenesisRequest | Create new cashtoken, both funglible and/or non-fungible (NFT) Refer to spec https://github.com/bitjson/cashtokens Newly created token identifier can be found in `tokenIds` field. 
 
     try:
         # Create new token category
@@ -1419,7 +1419,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token_genesis_request** | [**TokenGenesisRequest**](TokenGenesisRequest.md)| Create new cashtoken, both funglible and/or non-fungible (NFT) Refer to spec https://github.com/bitjson/cashtokens Newly created token identifier can be found in &#x60;categories&#x60; field.  | 
+ **token_genesis_request** | [**TokenGenesisRequest**](TokenGenesisRequest.md)| Create new cashtoken, both funglible and/or non-fungible (NFT) Refer to spec https://github.com/bitjson/cashtokens Newly created token identifier can be found in &#x60;tokenIds&#x60; field.  | 
 
 ### Return type
 
@@ -1475,7 +1475,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    token_mint_request = mainnet.TokenMintRequest() # TokenMintRequest | Mint new NFT cashtokens using an existing minting token Refer to spec https://github.com/bitjson/cashtokens Newly minted tokens will retain the parent's category. 
+    token_mint_request = mainnet.TokenMintRequest() # TokenMintRequest | Mint new NFT cashtokens using an existing minting token Refer to spec https://github.com/bitjson/cashtokens Newly minted tokens will retain the parent's `tokenId`. 
 
     try:
         # Mint new non-fungible tokens
@@ -1489,7 +1489,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token_mint_request** | [**TokenMintRequest**](TokenMintRequest.md)| Mint new NFT cashtokens using an existing minting token Refer to spec https://github.com/bitjson/cashtokens Newly minted tokens will retain the parent&#39;s category.  | 
+ **token_mint_request** | [**TokenMintRequest**](TokenMintRequest.md)| Mint new NFT cashtokens using an existing minting token Refer to spec https://github.com/bitjson/cashtokens Newly minted tokens will retain the parent&#39;s &#x60;tokenId&#x60;.  | 
 
 ### Return type
 

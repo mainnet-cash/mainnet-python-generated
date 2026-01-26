@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nft** | [**TokenNft**](TokenNft.md) |  | [optional] 
+**capability** | **str** | Capability of the new NFT | [optional] 
+**commitment** | **str** | Token commitment message, hexadecimal encoded, 40 bytes max length | [optional] 
 **cashaddr** | **str** | Cashaddress to send tokens to | [optional] 
 **value** | **float** | Satoshi value to send alongside with tokens | [optional] [default to 1000]
 
