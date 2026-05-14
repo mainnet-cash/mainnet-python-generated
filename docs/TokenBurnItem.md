@@ -1,11 +1,12 @@
-# TokenMintRequestRequests
+# TokenBurnItem
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**category** | **str** | Token unique hexadecimal identifier, also the id of the token creation transaction | 
 **nft** | [**TokenNft**](TokenNft.md) |  | [optional] 
-**cashaddr** | **str** | Cashaddress to send tokens to | [optional] 
-**value** | **float** | Satoshi value to send alongside with tokens | [optional] [default to 1000]
+**amount** | **float** | amount of fungible tokens to burn | [optional] 
+**cashaddr** | **str** | address to return token and satoshi change to, default to the sender&#39;s cashaddr | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
