@@ -1265,7 +1265,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    token_burn_request = mainnet.TokenBurnRequest() # TokenBurnRequest | Perform an explicit token burning by spending one or more token utxos alongside an OP_RETURN. Multiple burn requests across distinct categories can be bundled into a single transaction. Behaves differently for fungible and non-fungible tokens:  * NFTs are always \"destroyed\"  * FTs' amount is reduced by the amount specified, if 0 FT amount is left and no NFT present, the token is \"destroyed\" Refer to spec https://github.com/cashtokens/cashtokens 
+    token_burn_request = mainnet.TokenBurnRequest() # TokenBurnRequest | Perform an explicit token burning by spending a token utxo to an OP_RETURN Behaves differently for fungible and non-fungible tokens:  * NFTs are always \"destroyed\"  * FTs' amount is reduced by the amount specified, if 0 FT amount is left and no NFT present, the token is \"destroyed\" Refer to spec https://github.com/bitjson/cashtokens 
 
     try:
         # Perform an explicit token burn
@@ -1279,7 +1279,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token_burn_request** | [**TokenBurnRequest**](TokenBurnRequest.md)| Perform an explicit token burning by spending one or more token utxos alongside an OP_RETURN. Multiple burn requests across distinct categories can be bundled into a single transaction. Behaves differently for fungible and non-fungible tokens:  * NFTs are always \&quot;destroyed\&quot;  * FTs&#39; amount is reduced by the amount specified, if 0 FT amount is left and no NFT present, the token is \&quot;destroyed\&quot; Refer to spec https://github.com/cashtokens/cashtokens  | 
+ **token_burn_request** | [**TokenBurnRequest**](TokenBurnRequest.md)| Perform an explicit token burning by spending a token utxo to an OP_RETURN Behaves differently for fungible and non-fungible tokens:  * NFTs are always \&quot;destroyed\&quot;  * FTs&#39; amount is reduced by the amount specified, if 0 FT amount is left and no NFT present, the token is \&quot;destroyed\&quot; Refer to spec https://github.com/bitjson/cashtokens  | 
 
 ### Return type
 
@@ -1405,7 +1405,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    token_genesis_request = mainnet.TokenGenesisRequest() # TokenGenesisRequest | Create one or more new cashtokens, fungible and/or non-fungible (NFT), in a single transaction. Each genesis request consumes a distinct vout=0 input; the spent prevout's txid becomes the new category. Refer to spec https://github.com/cashtokens/cashtokens Newly created token category identifiers can be found in the `categories` field of the response. 
+    token_genesis_request = mainnet.TokenGenesisRequest() # TokenGenesisRequest | Create new cashtoken, both funglible and/or non-fungible (NFT) Refer to spec https://github.com/bitjson/cashtokens Newly created token identifier can be found in `categories` field. 
 
     try:
         # Create new token category
@@ -1419,7 +1419,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token_genesis_request** | [**TokenGenesisRequest**](TokenGenesisRequest.md)| Create one or more new cashtokens, fungible and/or non-fungible (NFT), in a single transaction. Each genesis request consumes a distinct vout&#x3D;0 input; the spent prevout&#39;s txid becomes the new category. Refer to spec https://github.com/cashtokens/cashtokens Newly created token category identifiers can be found in the &#x60;categories&#x60; field of the response.  | 
+ **token_genesis_request** | [**TokenGenesisRequest**](TokenGenesisRequest.md)| Create new cashtoken, both funglible and/or non-fungible (NFT) Refer to spec https://github.com/bitjson/cashtokens Newly created token identifier can be found in &#x60;categories&#x60; field.  | 
 
 ### Return type
 
@@ -1475,7 +1475,7 @@ configuration = mainnet.Configuration(
 with mainnet.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mainnet.WalletApi(api_client)
-    token_mint_request = mainnet.TokenMintRequest() # TokenMintRequest | Mint new NFT cashtokens using existing minting tokens. Supports minting across multiple categories in a single transaction. Refer to spec https://github.com/cashtokens/cashtokens Newly minted tokens retain their respective parent category. 
+    token_mint_request = mainnet.TokenMintRequest() # TokenMintRequest | Mint new NFT cashtokens using an existing minting token Refer to spec https://github.com/bitjson/cashtokens Newly minted tokens will retain the parent's category. 
 
     try:
         # Mint new non-fungible tokens
@@ -1489,7 +1489,7 @@ with mainnet.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token_mint_request** | [**TokenMintRequest**](TokenMintRequest.md)| Mint new NFT cashtokens using existing minting tokens. Supports minting across multiple categories in a single transaction. Refer to spec https://github.com/cashtokens/cashtokens Newly minted tokens retain their respective parent category.  | 
+ **token_mint_request** | [**TokenMintRequest**](TokenMintRequest.md)| Mint new NFT cashtokens using an existing minting token Refer to spec https://github.com/bitjson/cashtokens Newly minted tokens will retain the parent&#39;s category.  | 
 
 ### Return type
 
